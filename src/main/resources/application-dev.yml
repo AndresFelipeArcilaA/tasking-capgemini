@@ -1,0 +1,41 @@
+server:
+  port: 8282
+  servlet:
+    context-path: /api/v1/tasking
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  api-docs:
+    path: /api/v1/tasking
+    enabled: true
+
+spring:
+  banner:
+    location: custom-banner.txt
+  config:
+    activate:
+      on-profile: dev
+  application:
+    name: tasking-capgemini
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: SYSTEM
+    password: 123456
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    properties:
+      hibernate.default_schema: CAPGEMINI
+      jdbc:
+        lob:
+          non_contextual_creation: false
+    generate-ddl: false
+    show-sql: true
+    database-platform: org.hibernate.dialect.OracleDialect
+    hibernate:
+      ddl-auto: validate 
+
+request-mapping:
+  controller:
+    gestion-tareas: /gestion-tareas
