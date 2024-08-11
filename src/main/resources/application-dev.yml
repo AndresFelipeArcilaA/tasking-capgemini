@@ -21,7 +21,7 @@ spring:
     name: tasking-capgemini
   datasource:
     url: jdbc:oracle:thin:@localhost:1521:XE
-    username: SYSTEM
+    username: CAPGEMINI
     password: 123456
     driver-class-name: oracle.jdbc.driver.OracleDriver
   jpa:
